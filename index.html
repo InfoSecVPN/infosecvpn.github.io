@@ -1,103 +1,306 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>InfoSec VPN - Privacy at its Core</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="canonical" href="https://infosecvpn.org">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoSec VPN - Privacy at its Core</title>
+    <meta name="description" content="Stay anonymous online with InfoSec VPN's fully encrypted, no-logs VPN service. Access through Telegram with cryptocurrency payments.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neon': '#00FF94',
+                        'neon-dark': '#00CC78',
+                        'dark': '#0A0A0A',
+                        'darker': '#050505',
+                        'card': '#111111'
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out',
+                        'slide-up': 'slideUp 0.7s ease-out forwards',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        glow: {
+                            '0%': { 'box-shadow': '0 0 20px rgba(0, 255, 148, 0.3)' },
+                            '100%': { 'box-shadow': '0 0 40px rgba(0, 255, 148, 0.6)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #0A0A0A;
+            background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='100%25' gradientTransform='rotate(240)'%3E%3Cstop offset='0' stop-color='%230A0A0A'/%3E%3Cstop offset='1' stop-color='%23000000'/%3E%3C/linearGradient%3E%3Cpattern patternUnits='userSpaceOnUse' id='b' width='540' height='450' x='0' y='0' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='0.03'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect x='0' y='0' fill='url(%23b)' width='100%25' height='100%25'/%3E%3C/svg%3E"),
+                linear-gradient(135deg, rgba(0, 255, 148, 0.1) 0%, transparent 100%),
+                linear-gradient(45deg, rgba(0, 255, 148, 0.05) 0%, transparent 100%);
+            background-attachment: fixed;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(0, 255, 148, 0.15) 0%, transparent 25%),
+                radial-gradient(circle at 80% 80%, rgba(0, 255, 148, 0.15) 0%, transparent 25%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Add animated network lines */
+        .network-lines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.2;
+            pointer-events: none;
+            background: 
+                linear-gradient(90deg, rgba(0, 255, 148, 0.1) 1px, transparent 1px) 0 0 / 50px 50px,
+                linear-gradient(0deg, rgba(0, 255, 148, 0.1) 1px, transparent 1px) 0 0 / 50px 50px;
+            animation: moveLines 20s linear infinite;
+        }
+
+        @keyframes moveLines {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(50px, 50px);
+            }
+        }
+
+        /* Update card styles for better visibility on the new background */
+        .feature-card, .step-card {
+            background: rgba(17, 17, 17, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 255, 148, 0.15);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Add a subtle pulse animation to the neon elements */
+        .neon-glow {
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                text-shadow: 0 0 10px rgba(0, 255, 148, 0.5),
+                           0 0 20px rgba(0, 255, 148, 0.3);
+            }
+            50% {
+                text-shadow: 0 0 15px rgba(0, 255, 148, 0.7),
+                           0 0 25px rgba(0, 255, 148, 0.5);
+            }
+        }
+
+        /* Enhance nav background for better readability */
+        nav {
+            background: rgba(10, 10, 10, 0.95);
+            border-bottom: 1px solid rgba(0, 255, 148, 0.2);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .neon-glow {
+            text-shadow: 0 0 10px rgba(0, 255, 148, 0.5);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 255, 148, 0.1);
+        }
+
+        .feature-card {
+            background: rgba(17, 17, 17, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 255, 148, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(0, 255, 148, 0.3);
+            box-shadow: 0 0 30px rgba(0, 255, 148, 0.1);
+        }
+
+        .step-card {
+            background: rgba(17, 17, 17, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 255, 148, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            border-color: rgba(0, 255, 148, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.7s ease-out;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
-<body>
-  <header>
-    <h1>InfoSec VPN</h1>
-    <nav>
-      <a href="#">Home</a>
-      <a href="./transparency.html">Transparency</a>
-      <a href="./contact.html">Contact</a>
+<body class="text-gray-200">
+    <!-- Add network lines container -->
+    <div class="network-lines"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-dark/80 backdrop-blur-lg border-b border-neon/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="/" class="text-2xl font-bold text-neon neon-glow">InfoSec VPN</a>
+                </div>
+                <div class="flex items-center space-x-8">
+                    <a href="/" class="text-sm font-medium text-neon transition-colors">Home</a>
+                    <a href="/transparency.html" class="text-sm font-medium text-gray-300 hover:text-neon transition-colors">Transparency</a>
+                    <a href="/contact.html" class="text-sm font-medium text-gray-300 hover:text-neon transition-colors">Contact</a>
+                    <a href="https://t.me/InfoSecVPNBot" class="px-5 py-2.5 rounded-lg bg-neon text-dark font-medium hover:bg-neon-dark transition-colors">Get Started</a>
+                </div>
+            </div>
+        </div>
     </nav>
-  </header>
 
-  <section class="hero" id="home">
-    <h2>Privacy at its Core</h2>
-    <p>Stay anonymous online with a fully encrypted, no-logs VPN service.</p>
-    <a onclicK="alert('The bot is currently down for maintenance. Please check back later.')" class="cta">Get Started on Telegram</a>
-  </section>
+    <!-- Hero Section -->
+    <header class="min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="text-center max-w-3xl mx-auto">
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 text-neon neon-glow animate-fade-in">
+                    Privacy at its Core
+                </h1>
+                <p class="text-xl sm:text-2xl text-gray-400 mb-12 animate-slide-up">
+                    Stay anonymous online with a fully encrypted, no-logs VPN service.
+                </p>
+                <a href="https://t.me/i_vpn" 
+                   class="inline-flex items-center px-8 py-4 rounded-lg bg-neon text-dark font-medium hover:bg-neon-dark transition-all animate-glow">
+                    Get Started on Telegram
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
 
-  <section id="features">
-    <h2>Features</h2>
-    <div class="feature-list">
-      <div class="feature-item">Zero Logs</div>
-      <div class="feature-item">End-to-End Encryption</div>
-      <div class="feature-item">Anonymous Payment Options</div>
-      <div class="feature-item">Unmetered Bandwidth</div>
-    </div>
-  </section>
+    <!-- Features Section -->
+    <section class="py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16 text-neon neon-glow">Features</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 animate-on-scroll">
+                <div class="feature-card p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold text-neon mb-4">Zero Logs</h3>
+                    <p class="text-gray-400">We maintain absolutely no logs of your VPN activity. Your privacy is guaranteed.</p>
+                </div>
 
-  <section id="how-it-works">
-    <h2>How It Works</h2>
-    <div class="steps">
-      <div class="step">
-        <span class="step-number">1</span>
-        <p>Open the InfoSec VPN Telegram Bot</p>
-      </div>
-      <div class="step">
-        <span class="step-number">2</span>
-        <p>Deposit funds through our secure and anonymous payment system</p>
-      </div>
-      <div class="step">
-        <span class="step-number">3</span>
-        <p>Select your preferred server location (America, Canada, Switzerland, Ukraine, or Argentina)</p>
-      </div>
-      <div class="step">
-        <span class="step-number">4</span>
-        <p>Enjoy anonymous, secure browsing with unlimited bandwidth</p>
-      </div>
-    </div>
-  </section>
+                <div class="feature-card p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold text-neon mb-4">End-to-End Encryption</h3>
+                    <p class="text-gray-400">Military-grade encryption ensures your data remains private and secure.</p>
+                </div>
 
-  <section id="pricing">
-    <h2>Pricing</h2>
-    <div class="pricing-table">
-      <div class="pricing-item">
-        <h3>Basic Plan</h3>
-        <p>$10/month</p>
-        <p>Unmetered bandwidth</p>
-        <p>Zero Logs</p>
-      </div>
-      <div class="pricing-item">
-        <h3>Top-Up Options</h3>
-        <ul>
-          <p>$20.00</p>
-          <p>$50.00</p>
-          <p>$100.00</p>
-          <p>$500.00</p>
-        </ul>
-      </div>
-    </div>
-  </section>
+                <div class="feature-card p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold text-neon mb-4">Anonymous Payment Options</h3>
+                    <p class="text-gray-400">Pay with cryptocurrency to maintain complete anonymity.</p>
+                </div>
 
-  <section id="faq">
-    <h2>FAQ</h2>
-    <div class="faq-item">
-      <h3>What payment methods are accepted?</h3>
-      <p>We accept BTC, ETH, LTC, and XMR payments via our Telegram bot.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Is any valuable data logged?</h3>
-      <p>No, we maintain a strict no-logs policy. No IPs, traffic data, or email addresses are ever stored.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Which server locations are available?</h3>
-      <p>We offer servers in America, Canada, Switzerland, Ukraine, and Argentina.</p>
-    </div>
-    <div class="faq-item">
-      <h3>How do I get started?</h3>
-      <p>Simply click “Start on our Telegram bot” and follow the instructions.</p>
-    </div>
-  </section>
+                <div class="feature-card p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold text-neon mb-4">Unmetered Bandwidth</h3>
+                    <p class="text-gray-400">Enjoy unlimited data transfer with no speed restrictions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    <p>© 2024 InfoSec VPN. All rights reserved.</p>
-  </footer>
+    <!-- How It Works Section -->
+    <section class="py-32 relative">
+        <div class="absolute inset-0 bg-neon/5"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <h2 class="text-4xl font-bold text-center mb-16 text-neon neon-glow">How It Works</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 animate-on-scroll">
+                <div class="step-card p-8 rounded-2xl text-center">
+                    <div class="text-4xl font-bold text-neon mb-4">1</div>
+                    <p class="text-gray-400">Open the InfoSec VPN Telegram Bot</p>
+                </div>
+
+                <div class="step-card p-8 rounded-2xl text-center">
+                    <div class="text-4xl font-bold text-neon mb-4">2</div>
+                    <p class="text-gray-400">Deposit funds through our secure and anonymous payment system</p>
+                </div>
+
+                <div class="step-card p-8 rounded-2xl text-center">
+                    <div class="text-4xl font-bold text-neon mb-4">3</div>
+                    <p class="text-gray-400">Select your preferred server location (America, Canada, Switzerland, Ukraine, or Argentina)</p>
+                </div>
+
+                <div class="step-card p-8 rounded-2xl text-center">
+                    <div class="text-4xl font-bold text-neon mb-4">4</div>
+                    <p class="text-gray-400">Enjoy anonymous, secure browsing with unlimited bandwidth</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-neon/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p class="text-gray-400">© 2025 InfoSec VPN. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        // Observe elements with animation classes
+        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+    </script>
 </body>
-</html>
+</html> 
