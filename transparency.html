@@ -1,48 +1,219 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Transparency - InfoSec VPN</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transparency - InfoSec VPN</title>
+    <meta name="description" content="InfoSec VPN's transparency report and data handling practices. View our commitment to user privacy and minimal data collection.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neon': '#00FF94',
+                        'neon-dark': '#00CC78',
+                        'dark': '#0A0A0A',
+                        'darker': '#050505',
+                        'card': '#111111'
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out',
+                        'slide-up': 'slideUp 0.7s ease-out forwards',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        glow: {
+                            '0%': { 'box-shadow': '0 0 20px rgba(0, 255, 148, 0.3)' },
+                            '100%': { 'box-shadow': '0 0 40px rgba(0, 255, 148, 0.6)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #0A0A0A;
+            background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='100%25' gradientTransform='rotate(240)'%3E%3Cstop offset='0' stop-color='%230A0A0A'/%3E%3Cstop offset='1' stop-color='%23000000'/%3E%3C/linearGradient%3E%3Cpattern patternUnits='userSpaceOnUse' id='b' width='540' height='450' x='0' y='0' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='0.03'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect x='0' y='0' fill='url(%23b)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+            background-attachment: fixed;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(0, 255, 148, 0.15) 0%, transparent 25%),
+                radial-gradient(circle at 80% 80%, rgba(0, 255, 148, 0.15) 0%, transparent 25%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .network-lines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.2;
+            pointer-events: none;
+            background: 
+                linear-gradient(90deg, rgba(0, 255, 148, 0.1) 1px, transparent 1px) 0 0 / 50px 50px,
+                linear-gradient(0deg, rgba(0, 255, 148, 0.1) 1px, transparent 1px) 0 0 / 50px 50px;
+            animation: moveLines 20s linear infinite;
+        }
+
+        @keyframes moveLines {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .transparency-card {
+            background: rgba(17, 17, 17, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 255, 148, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .transparency-card:hover {
+            border-color: rgba(0, 255, 148, 0.3);
+        }
+
+        .neon-glow {
+            text-shadow: 0 0 10px rgba(0, 255, 148, 0.5);
+        }
+
+        nav {
+            background: rgba(10, 10, 10, 0.95);
+            border-bottom: 1px solid rgba(0, 255, 148, 0.2);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .data-table {
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 100%;
+            margin-top: 2rem;
+        }
+
+        .data-table th {
+            background: rgba(0, 255, 148, 0.1);
+            border-bottom: 2px solid rgba(0, 255, 148, 0.3);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: #00FF94;
+        }
+
+        .data-table td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(0, 255, 148, 0.1);
+        }
+
+        .data-table tbody tr:hover {
+            background: rgba(0, 255, 148, 0.05);
+        }
+    </style>
 </head>
-<body>
-  <header>
-    <h1>InfoSec VPN</h1>
-    <nav>
-      <a href="./index.html">Home</a>
-      <a href="#">Transparency</a>
-      <a href="./contact.html">Contact</a>
+<body class="text-gray-200">
+    <div class="network-lines"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-dark/80 backdrop-blur-lg border-b border-neon/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="/" class="text-2xl font-bold text-neon neon-glow">InfoSec VPN</a>
+                </div>
+                <div class="flex items-center space-x-8">
+                    <a href="/" class="text-sm font-medium text-gray-300 hover:text-neon transition-colors">Home</a>
+                    <a href="/transparency.html" class="text-sm font-medium text-neon transition-colors">Transparency</a>
+                    <a href="/contact.html" class="text-sm font-medium text-gray-300 hover:text-neon transition-colors">Contact</a>
+                    <a href="https://t.me/InfoSecVPNBot" class="px-5 py-2.5 rounded-lg bg-neon text-dark font-medium hover:bg-neon-dark transition-colors">Get Started</a>
+                </div>
+            </div>
+        </div>
     </nav>
-  </header>
 
-  <section class="transparency">
-    <h2>Transparency Reports</h2>
-    <p>We are legally required to be fully transparency regarding government requests for user data.</p>
-    <p>Below is an example of the data we store, demonstrating our dedication to minimal data handling and user privacy.</p>
+    <!-- Transparency Section -->
+    <section class="min-h-screen pt-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h1 class="text-5xl font-bold text-neon neon-glow animate-fade-in mb-4">Transparency Reports</h1>
+                <p class="text-xl text-gray-400 animate-slide-up">We are legally required to be fully transparent regarding government requests for user data.</p>
+            </div>
 
-    <div class="exported-table">
-      <table>
-        <tr class="title"><td colspan="4" align="center">Table: users</td></tr>
-        <tr class="header">
-          <td><b>#</b></td>
-          <td><b>user_id</b></td>
-          <td><b>ovpn_file_location</b></td>
-          <td><b>balance</b></td>
-        </tr>
-        <tr>
-          <td class="rownum">1</td>
-          <td>102930293</td>
-          <td>$2y$10$MYeN.DoHohgnR1gJjSG1zudQY3OVrIk8AQosax6bImIuehOo7x7k2</td>
-          <td>20</td>
-        </tr>
-      </table>
-      <p class="generated-info">The location (ie. what servers they use) is stored as an encrypted string that only the buyer knows the password too.</p>
-    </div>
-  </section>
+            <div class="transparency-card p-8 rounded-2xl animate-fade-in">
+                <p class="text-gray-300 mb-8">Below is an example of the data we store, demonstrating our dedication to minimal data handling and user privacy.</p>
+                
+                <div class="overflow-x-auto">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th class="rounded-tl-lg">ID</th>
+                                <th>TELEGRAM_ID</th>
+                                <th>BALANCE</th>
+                                <th>EXPIRY</th>
+                                <th>TOS</th>
+                                <th class="rounded-tr-lg">KEY_HASH</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>5507398632</td>
+                                <td>0</td>
+                                <td>2025-08-20T10:16:55.754197</td>
+                                <td>1</td>
+                                <td>$2b$12$CotXeAjTuo8oNsNdxe2PjeOrVqTC4U9Ijcw51mW8LJXXsRmbTwKrq</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-  <footer>
-    <p>© 2024 InfoSec VPN. All rights reserved.</p>
-  </footer>
+                <p class="text-gray-400 mt-6 italic">The KEY_HASH is stored as an encrypted string that only the buyer knows the password to. TOS_AGREE value of 1 indicates acceptance of our Terms of Service.</p>
+
+                <p class="text-gray-400 mt-2">Format in database: id|telegram_id|balance|expiry|tos_agree|key_hash</p>
+            </div>
+
+            <div class="transparency-card p-8 rounded-2xl mt-8 animate-fade-in">
+                <h2 class="text-2xl font-bold text-neon mb-6">Our Privacy Commitment</h2>
+                <div class="space-y-4">
+                    <p class="text-gray-300">• We maintain a strict no-logs policy</p>
+                    <p class="text-gray-300">• User data is minimally stored and encrypted</p>
+                    <p class="text-gray-300">• We accept cryptocurrency for enhanced privacy</p>
+                    <p class="text-gray-300">• Server locations are encrypted and only known to users</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-neon/10 mt-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p class="text-gray-400">© 2024 InfoSec VPN. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
-</html>
+</html> 
